@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ """
 from models.base_model import BaseModel
+from models.base_model import Base
 import unittest
 import datetime
 from uuid import UUID
@@ -70,9 +71,9 @@ class test_basemodel(unittest.TestCase):
 
     def test_kwargs_none(self):
         """ """
-        n = {None: None}
-        with self.assertRaises(TypeError):
-            new = self.value(**n)
+        n = {'name': 'test'}
+        new = self.value(**n)
+        self.assertEqual(new.name, n['name'])
 
     def test_kwargs_one(self):
         """ """
