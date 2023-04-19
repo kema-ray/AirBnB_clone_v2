@@ -24,30 +24,7 @@ class BaseModel:
                         nullable=False,
                         default=datetime.utcnow())
 
-    # def __init__(self, *args, **kwargs):
-    #     """Instantiates a new model"""
-    #     if not kwargs:
-    #         from models import storage
-    #         self.id = str(uuid.uuid4())
-    #         self.created_at = datetime.now()
-    #         self.updated_at = datetime.now()
-    #     else:
-    #         # The commented code if for task number 6
-    #         '''
-    #         for k in kwargs:
-    #             if k in ['created_at', 'updated_at']:
-    #                 setattr(self, k, datetime.fromisoformat(kwargs[k]))
-    #             elif k != '__class__':
-    #                 setattr(self, k, kwargs[k])
-    #         '''
-    #         kwargs['updated_at'] = datetime.strptime(kwargs['updated_at'],
-    #                                                  '%Y-%m-%dT%H:%M:%S.%f')
-    #         kwargs['created_at'] = datetime.strptime(kwargs['created_at'],
-    #                                                  '%Y-%m-%dT%H:%M:%S.%f')
-    #         del kwargs['__class__']
-    #         self.__dict__.update(kwargs)
-
-    def __init__(self, args, kwargs):
+    def __init__(self, *args, **kwargs):
         """
         Initializes a new BaseModel
         """
