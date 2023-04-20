@@ -15,6 +15,10 @@ from models.review import Review
 import models
 import os
 
+"""
+Represents the many to many relationship table
+between Place and Amenity records.
+"""
 place_amenity = Table('place_amenity',Base.metadata,
     Column(
         'place_id',
@@ -32,12 +36,10 @@ place_amenity = Table('place_amenity',Base.metadata,
     )
 )
 
-"""
-Represents the many to many relationship table
-between Place and Amenity records.
-"""
 class Place(BaseModel, Base):
-    """ A place to stay """
+    """
+    A place to stay
+    """
     __tablename__ = 'places'
     city_id = Column(String(60), ForeignKey('cities.id'), nullable=False
     ) if os.getenv('HBNB_TYPE_STORAGE') == 'db' else ''
