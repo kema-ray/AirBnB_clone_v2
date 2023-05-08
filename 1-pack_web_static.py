@@ -10,6 +10,7 @@ from fabric.api import local
 from os.path import isdir
 from datetime import datetime
 
+
 def do_pack():
     """
     Generates a tgz archive
