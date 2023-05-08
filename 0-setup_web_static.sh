@@ -4,11 +4,11 @@ SERVER_CONFIG="server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
 	server_name _;
-	index index.html index.htm;
+	index index.html index.html;
 	error_page 404 /404.html;
 	add_header X-Served-By \$hostname;
 	location / {
-		root /var/www/html/;
+		ubuntu /var/www/html/;
 		try_files \$uri \$uri/ =404;
 	}
 	location /hbnb_static/ {
@@ -19,7 +19,7 @@ SERVER_CONFIG="server {
 		rewrite ^ https://sketchfab.com/bluepeno/models permanent;
 	}
 	location = /404.html {
-		root /var/www/error/;
+		ubuntu /var/www/error/;
 		internal;
 	}
 }"
