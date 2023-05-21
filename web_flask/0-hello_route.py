@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
 """
 Flask Web application
 """
@@ -23,24 +22,3 @@ def index():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000')
-=======
-"""Starts a Flask web application.
-
-The application listens on 0.0.0.0, port 5000.
-Routes:
-    /: Displays 'Hello HBNB!'
-"""
-from flask import Flask
-
-app = Flask(__name__)
-
-
-@app.route("/", strict_slashes=False)
-def hello_hbnb():
-    """Displays 'Hello HBNB!'"""
-    return "Hello HBNB!"
-
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0")
->>>>>>> 3d2627b123b2b6c59c48a1fc32be2cb4b652435f
