@@ -6,7 +6,6 @@ from importlib import import_module
 import json
 
 
-
 class FileStorage:
     """
     This class manages storage of hbnb models in JSON format
